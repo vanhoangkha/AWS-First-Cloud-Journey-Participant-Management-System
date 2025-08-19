@@ -1,17 +1,218 @@
+<!-- Breadcrumb -->
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">New User</li>
-    </ol>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/"><i class="bi bi-house-door me-1"></i>Home</a>
+    </li>
+    <li class="breadcrumb-item active">
+      <i class="bi bi-person-plus me-1"></i>Add Participant
+    </li>
+  </ol>
 </nav>
 
 {{#if alert}}
 <div class="alert alert-success alert-dismissible fade show" role="alert">
-    {{alert}}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  <i class="bi bi-check-circle-fill me-2"></i>{{alert}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 </div>
 {{/if}}
 
-<form class="row g-3 needs-validation" method="POST" action="/adduser" novalidate>
-   {{> user-form}}
-</form>
+<!-- Page Header -->
+<div class="page-header">
+  <div class="row align-items-center">
+    <div class="col">
+      <h1><i class="bi bi-person-plus me-3"></i>Add New Participant</h1>
+      <p class="mb-0">Create a new participant account in the AWS First Cloud Journey program</p>
+    </div>
+  </div>
+</div>
+
+<!-- Form Card -->
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">
+          <i class="bi bi-form me-2"></i>Participant Information
+        </h5>
+      </div>
+      <div class="card-body">
+        <form method="POST" action="/adduser" id="add-participant-form">
+          <div class="row g-4">
+            <!-- Personal Information Section -->
+            <div class="col-12">
+              <h6 class="text-muted text-uppercase fw-bold mb-3">
+                <i class="bi bi-person me-2"></i>Personal Information
+              </h6>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="first_name" name="first_name" 
+                       placeholder="First Name" required>
+                <label for="first_name">
+                  <i class="bi bi-person me-2"></i>First Name *
+                </label>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="last_name" name="last_name" 
+                       placeholder="Last Name" required>
+                <label for="last_name">
+                  <i class="bi bi-person me-2"></i>Last Name *
+                </label>
+              </div>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div class="col-12 mt-4">
+              <h6 class="text-muted text-uppercase fw-bold mb-3">
+                <i class="bi bi-envelope me-2"></i>Contact Information
+              </h6>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="email" name="email" 
+                       placeholder="Email Address" required>
+                <label for="email">
+                  <i class="bi bi-envelope me-2"></i>Email Address *
+                </label>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="tel" class="form-control" id="phone" name="phone" 
+                       placeholder="Phone Number" required>
+                <label for="phone">
+                  <i class="bi bi-telephone me-2"></i>Phone Number *
+                </label>
+              </div>
+            </div>
+
+            <!-- Additional Information Section -->
+            <div class="col-12 mt-4">
+              <h6 class="text-muted text-uppercase fw-bold mb-3">
+                <i class="bi bi-chat-text me-2"></i>Additional Information
+              </h6>
+            </div>
+            
+            <div class="col-12">
+              <div class="form-floating">
+                <textarea class="form-control" id="comments" name="comments" 
+                          placeholder="Comments" style="height: 120px;"></textarea>
+                <label for="comments">
+                  <i class="bi bi-chat-text me-2"></i>Comments (Optional)
+                </label>
+              </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="col-12 mt-4">
+              <div class="d-flex justify-content-between">
+                <a href="/" class="btn btn-outline-secondary">
+                  <i class="bi bi-arrow-left me-2"></i>Cancel
+                </a>
+                <button type="submit" class="btn btn-success btn-lg" id="submit-btn">
+                  <i class="bi bi-check-lg me-2"></i>Add Participant
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('add-participant-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const inputs = form.querySelectorAll('input[required], textarea[required]');
+  
+  // Form validation
+  function validateForm() {
+    let isValid = true;
+    
+    inputs.forEach(input => {
+      const value = input.value.trim();
+      
+      if (!value) {
+        isValid = false;
+        input.classList.add('is-invalid');
+      } else {
+        input.classList.remove('is-invalid');
+        input.classList.add('is-valid');
+        
+        // Email validation
+        if (input.type === 'email' && value) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(value)) {
+            isValid = false;
+            input.classList.add('is-invalid');
+            input.classList.remove('is-valid');
+          }
+        }
+      }
+    });
+    
+    submitBtn.disabled = !isValid;
+    return isValid;
+  }
+  
+  // Real-time validation
+  inputs.forEach(input => {
+    input.addEventListener('input', validateForm);
+    input.addEventListener('blur', validateForm);
+  });
+  
+  // Form submission
+  form.addEventListener('submit', function(e) {
+    if (!validateForm()) {
+      e.preventDefault();
+      return false;
+    }
+  });
+  
+  // Initial validation
+  validateForm();
+  
+  // Add floating label animation
+  inputs.forEach(input => {
+    input.addEventListener('focus', function() {
+      this.parentElement.classList.add('focused');
+    });
+    
+    input.addEventListener('blur', function() {
+      if (!this.value) {
+        this.parentElement.classList.remove('focused');
+      }
+    });
+  });
+});
+</script>
+
+<style>
+.form-floating.focused label {
+  color: var(--bs-primary);
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+.form-control.is-valid {
+  border-color: var(--bs-success);
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+.form-control.is-invalid {
+  border-color: var(--bs-danger);
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.form-floating > .form-control:focus ~ label {
+  color: var(--bs-primary);
+}
+</style>

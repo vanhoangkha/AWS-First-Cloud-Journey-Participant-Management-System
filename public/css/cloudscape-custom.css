@@ -1,0 +1,158 @@
+/* AWS Cloudscape Design System Customizations */
+
+/* Global Styles */
+:root {
+  --awsui-color-background-layout-main: #fafbfc;
+  --awsui-color-background-container-content: #ffffff;
+  --awsui-color-text-body-default: #16191f;
+  --awsui-color-text-heading-default: #0d1117;
+  --awsui-space-scaled-s: 8px;
+  --awsui-space-scaled-m: 16px;
+  --awsui-space-scaled-l: 24px;
+  --awsui-space-scaled-xl: 32px;
+}
+
+/* App Layout Customizations */
+#app {
+  min-height: 100vh;
+  background-color: var(--awsui-color-background-layout-main);
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  padding: var(--awsui-space-scaled-l);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Custom Table Styles */
+.participant-table {
+  margin-top: var(--awsui-space-scaled-l);
+}
+
+/* Custom Card Styles */
+.info-card {
+  background: var(--awsui-color-background-container-content);
+  border-radius: 8px;
+  padding: var(--awsui-space-scaled-l);
+  box-shadow: 0 1px 1px 0 rgba(0, 28, 36, 0.3);
+  margin-bottom: var(--awsui-space-scaled-l);
+}
+
+/* Form Styles */
+.form-container {
+  background: var(--awsui-color-background-container-content);
+  border-radius: 8px;
+  padding: var(--awsui-space-scaled-xl);
+  box-shadow: 0 1px 1px 0 rgba(0, 28, 36, 0.3);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Action Button Groups */
+.action-buttons {
+  display: flex;
+  gap: var(--awsui-space-scaled-s);
+  align-items: center;
+}
+
+/* Status Badge Styles */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-inactive {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: var(--awsui-space-scaled-m);
+  }
+  
+  .form-container {
+    padding: var(--awsui-space-scaled-l);
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Loading States */
+.loading-overlay {
+  position: relative;
+}
+
+.loading-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Print Styles */
+@media print {
+  cloudscape-top-navigation,
+  cloudscape-side-navigation,
+  .action-buttons {
+    display: none !important;
+  }
+  
+  .content-wrapper {
+    padding: 0;
+    max-width: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .info-card {
+    border: 2px solid #000;
+  }
+  
+  .status-badge {
+    border: 1px solid currentColor;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --awsui-color-background-layout-main: #16191f;
+    --awsui-color-background-container-content: #232f3e;
+    --awsui-color-text-body-default: #ffffff;
+    --awsui-color-text-heading-default: #ffffff;
+  }
+}

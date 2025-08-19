@@ -1,49 +1,302 @@
-
+<!-- Breadcrumb -->
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">View User</li>
+    <li class="breadcrumb-item">
+      <a href="/"><i class="bi bi-house-door me-1"></i>Home</a>
+    </li>
+    <li class="breadcrumb-item active">
+      <i class="bi bi-eye me-1"></i>View Participant
+    </li>
   </ol>
 </nav>
 
-<div class="view-user p-5">
-  {{#each rows}}
-  <div class="row mb-5">
-    <div class="col text-center">
-      <h3>{{this.first_name}} {{this.last_name}}</h3>
+{{#each rows}}
+<!-- Page Header -->
+<div class="page-header">
+  <div class="row align-items-center">
+    <div class="col-md-8">
+      <h1><i class="bi bi-person-circle me-3"></i>{{this.first_name}} {{this.last_name}}</h1>
+      <p class="mb-0">Participant ID: <span class="badge bg-primary">#{{this.id}}</span></p>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Phone</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">{{this.first_name}}</th>
-            <td>{{this.last_name}}</td>
-            <td>{{this.email}}</td>
-            <td>{{this.phone}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="row">
-      <div class="col">
-        <b>Comments</b>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        {{this.comments}}
+    <div class="col-md-4 text-md-end">
+      <div class="btn-group">
+        <a href="/edituser/{{this.id}}" class="btn btn-primary">
+          <i class="bi bi-pencil me-2"></i>Edit
+        </a>
+        <a href="/" class="btn btn-outline-secondary">
+          <i class="bi bi-arrow-left me-2"></i>Back
+        </a>
       </div>
     </div>
   </div>
-  {{/each}}
 </div>
+
+<div class="row">
+  <!-- Main Information -->
+  <div class="col-lg-8">
+    <!-- Personal Information Card -->
+    <div class="card mb-4">
+      <div class="card-header">
+        <h5 class="mb-0">
+          <i class="bi bi-person me-2"></i>Personal Information
+        </h5>
+      </div>
+      <div class="card-body">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="info-item">
+              <label class="info-label">First Name</label>
+              <div class="info-value">{{this.first_name}}</div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-item">
+              <label class="info-label">Last Name</label>
+              <div class="info-value">{{this.last_name}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="info-item">
+              <label class="info-label">Full Name</label>
+              <div class="info-value">{{this.first_name}} {{this.last_name}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Information Card -->
+    <div class="card mb-4">
+      <div class="card-header">
+        <h5 class="mb-0">
+          <i class="bi bi-envelope me-2"></i>Contact Information
+        </h5>
+      </div>
+      <div class="card-body">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="info-item">
+              <label class="info-label">Email Address</label>
+              <div class="info-value">
+                <a href="mailto:{{this.email}}" class="text-decoration-none">
+                  <i class="bi bi-envelope me-2"></i>{{this.email}}
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-item">
+              <label class="info-label">Phone Number</label>
+              <div class="info-value">
+                <a href="tel:{{this.phone}}" class="text-decoration-none">
+                  <i class="bi bi-telephone me-2"></i>{{this.phone}}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{#if this.comments}}
+    <!-- Additional Information Card -->
+    <div class="card mb-4">
+      <div class="card-header">
+        <h5 class="mb-0">
+          <i class="bi bi-chat-text me-2"></i>Additional Information
+        </h5>
+      </div>
+      <div class="card-body">
+        <div class="info-item">
+          <label class="info-label">Comments</label>
+          <div class="info-value">{{this.comments}}</div>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+
+  <!-- Sidebar -->
+  <div class="col-lg-4">
+    <!-- Status Card -->
+    <div class="card mb-4">
+      <div class="card-header">
+        <h6 class="mb-0">
+          <i class="bi bi-info-circle me-2"></i>Status
+        </h6>
+      </div>
+      <div class="card-body text-center">
+        <div class="status-indicator mb-3">
+          <i class="bi bi-check-circle-fill text-success display-4"></i>
+        </div>
+        <h5 class="text-success">Active</h5>
+        <p class="text-muted mb-0">Participant is currently active in the program</p>
+      </div>
+    </div>
+
+    <!-- Quick Actions Card -->
+    <div class="card mb-4">
+      <div class="card-header">
+        <h6 class="mb-0">
+          <i class="bi bi-lightning me-2"></i>Quick Actions
+        </h6>
+      </div>
+      <div class="card-body">
+        <div class="d-grid gap-2">
+          <a href="/edituser/{{this.id}}" class="btn btn-primary">
+            <i class="bi bi-pencil me-2"></i>Edit Participant
+          </a>
+          <button class="btn btn-info" onclick="copyToClipboard()">
+            <i class="bi bi-clipboard me-2"></i>Copy Information
+          </button>
+          <button class="btn btn-success" onclick="exportData()">
+            <i class="bi bi-download me-2"></i>Export Data
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Danger Zone Card -->
+    <div class="card border-danger">
+      <div class="card-header bg-danger text-white">
+        <h6 class="mb-0">
+          <i class="bi bi-exclamation-triangle me-2"></i>Danger Zone
+        </h6>
+      </div>
+      <div class="card-body">
+        <p class="text-muted mb-3">
+          Once you delete a participant, there is no going back. Please be certain.
+        </p>
+        <div class="d-grid">
+          <a href="/{{this.id}}" class="btn btn-danger btn-delete">
+            <i class="bi bi-trash me-2"></i>Delete Participant
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/each}}
+
+<style>
+.info-item {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--bs-primary);
+}
+
+.info-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.info-value {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #212529;
+}
+
+.info-value a {
+  color: var(--bs-primary);
+  transition: all 0.3s ease;
+}
+
+.info-value a:hover {
+  color: var(--bs-primary);
+  transform: translateX(2px);
+}
+
+.status-indicator {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+</style>
+
+<script>
+// Copy participant information to clipboard
+function copyToClipboard() {
+  const participantInfo = `
+Name: {{this.first_name}} {{this.last_name}}
+Email: {{this.email}}
+Phone: {{this.phone}}
+{{#if this.comments}}Comments: {{this.comments}}{{/if}}
+  `.trim();
+  
+  navigator.clipboard.writeText(participantInfo).then(() => {
+    // Show success message
+    showAlert('success', 'Participant information copied to clipboard!');
+  }).catch(() => {
+    showAlert('danger', 'Failed to copy information to clipboard.');
+  });
+}
+
+// Export participant data
+function exportData() {
+  const participantData = {
+    id: '{{this.id}}',
+    firstName: '{{this.first_name}}',
+    lastName: '{{this.last_name}}',
+    email: '{{this.email}}',
+    phone: '{{this.phone}}',
+    comments: '{{this.comments}}',
+    exportDate: new Date().toISOString()
+  };
+  
+  const dataStr = JSON.stringify(participantData, null, 2);
+  const dataBlob = new Blob([dataStr], {type: 'application/json'});
+  const url = URL.createObjectURL(dataBlob);
+  
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = `participant-{{this.id}}-${new Date().toISOString().split('T')[0]}.json`;
+  link.click();
+  
+  URL.revokeObjectURL(url);
+  showAlert('success', 'Participant data exported successfully!');
+}
+
+// Show alert message
+function showAlert(type, message) {
+  const alertDiv = document.createElement('div');
+  alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+  alertDiv.innerHTML = `
+    <i class="bi bi-${type === 'success' ? 'check-circle-fill' : 'exclamation-triangle-fill'} me-2"></i>
+    ${message}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  `;
+  
+  document.querySelector('.main-content .container-fluid').insertBefore(
+    alertDiv, 
+    document.querySelector('.main-content .container-fluid').firstChild
+  );
+  
+  // Auto-dismiss after 3 seconds
+  setTimeout(() => {
+    const bsAlert = new bootstrap.Alert(alertDiv);
+    bsAlert.close();
+  }, 3000);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Add animation to cards
+  const cards = document.querySelectorAll('.card');
+  cards.forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.1}s`;
+    card.classList.add('fade-in-up');
+  });
+});
+</script>
