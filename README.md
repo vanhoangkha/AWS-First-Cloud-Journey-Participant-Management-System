@@ -127,8 +127,8 @@ Before you begin, ensure you have the following installed:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/aws-fcj-management.git
-   cd aws-fcj-management
+   git clone https://github.com/vanhoangkha/AWS-First-Cloud-Journey-Participant-Management-System.git
+   cd AWS-First-Cloud-Journey-Participant-Management-System
    ```
 
 2. **Install dependencies**
@@ -157,8 +157,8 @@ Before you begin, ensure you have the following installed:
 #### Step 1: Clone and Setup
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/aws-fcj-management.git
-cd aws-fcj-management
+git clone https://github.com/vanhoangkha/AWS-First-Cloud-Journey-Participant-Management-System.git
+cd AWS-First-Cloud-Journey-Participant-Management-System
 
 # Install dependencies
 npm install
@@ -453,9 +453,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you need help or have questions:
 
 - 📧 **Email**: support@aws-fcj-management.com
-- 💬 **Issues**: [GitHub Issues](https://github.com/your-username/aws-fcj-management/issues)
-- 📖 **Documentation**: [Wiki](https://github.com/your-username/aws-fcj-management/wiki)
-- 🌐 **Website**: [Project Homepage](https://your-username.github.io/aws-fcj-management)
+- 💬 **Issues**: [GitHub Issues](https://github.com/vanhoangkha/AWS-First-Cloud-Journey-Participant-Management-System/issues)
+- 📖 **Documentation**: [Wiki](https://github.com/vanhoangkha/AWS-First-Cloud-Journey-Participant-Management-System/wiki)
+- 🌐 **Website**: [Project Homepage](https://vanhoangkha.github.io/AWS-First-Cloud-Journey-Participant-Management-System)
 
 ---
 
