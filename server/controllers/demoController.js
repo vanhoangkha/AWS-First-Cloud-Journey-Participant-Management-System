@@ -78,14 +78,14 @@ let nextId = 9;
 
 // View users
 exports.view = (req, res) => {
-    console.log('📋 Demo mode: Displaying sample users');
+    console.log('Demo mode: Displaying sample users');
     let removeUser = req.query.removed;
     res.render('home', { rows: demoUsers, removeUser });
 };
 
 // Find user by search
 exports.find = (req, res) => {
-    console.log('🔍 Demo mode: Searching users');
+    console.log('Demo mode: Searching users');
     let searchTerm = req.body.search.toLowerCase();
 
     const filteredUsers = demoUsers.filter(user =>
@@ -104,7 +104,7 @@ exports.form = (req, res) => {
 
 // Add new user
 exports.create = (req, res) => {
-    console.log('➕ Demo mode: Adding new user');
+    console.log('Demo mode: Adding new user');
     const { first_name, last_name, email, phone, comments } = req.body;
 
     const newUser = {
@@ -123,7 +123,7 @@ exports.create = (req, res) => {
 
 // Edit user form
 exports.edit = (req, res) => {
-    console.log('✏️ Demo mode: Editing participant');
+    console.log('Demo mode: Editing participant');
     const userId = parseInt(req.params.id);
     const user = demoUsers.find(u => u.id === userId);
 
@@ -136,7 +136,7 @@ exports.edit = (req, res) => {
 
 // Update user
 exports.update = (req, res) => {
-    console.log('💾 Demo mode: Updating participant');
+    console.log('Demo mode: Updating participant');
     const userId = parseInt(req.params.id);
     const { first_name, last_name, email, phone, comments } = req.body;
 
@@ -163,7 +163,7 @@ exports.update = (req, res) => {
 
 // Delete user
 exports.delete = (req, res) => {
-    console.log('🗑️ Demo mode: Deleting participant');
+    console.log('Demo mode: Deleting participant');
     const userId = parseInt(req.params.id);
     const userIndex = demoUsers.findIndex(u => u.id === userId);
 
@@ -178,7 +178,7 @@ exports.delete = (req, res) => {
 
 // View single user
 exports.viewall = (req, res) => {
-    console.log('👁️ Demo mode: Viewing participant details');
+    console.log('Demo mode: Viewing participant details');
     const userId = parseInt(req.params.id);
     const user = demoUsers.find(u => u.id === userId);
 

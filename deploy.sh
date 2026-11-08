@@ -130,7 +130,7 @@ if command -v jq &> /dev/null; then
     # Get the application URL
     APP_URL=$(echo "$OUTPUTS" | jq -r '.[] | select(.OutputKey=="ApplicationURL") | .OutputValue')
     if [ "$APP_URL" != "null" ]; then
-        print_success "🎉 AWS FCJ Management System is now available at:"
+        print_success "AWS FCJ Management System is now available at:"
         echo -e "${GREEN}${APP_URL}${NC}"
         echo
         print_status "It may take a few minutes for the application to be fully ready."
@@ -142,4 +142,4 @@ else
     aws cloudformation describe-stacks --stack-name $STACK_NAME --region $REGION --query 'Stacks[0].Outputs[*].[OutputKey,OutputValue]' --output table
 fi
 
-print_success "Deployment completed! 🚀"
+print_success "Deployment completed!"

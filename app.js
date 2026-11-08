@@ -57,13 +57,13 @@ let databaseConnected = false;
 
 pool.getConnection((err, connection) => {
     if(err) {
-        console.error('❌ Database connection failed:', err.message);
-        console.log('📋 Please ensure MySQL is running and configured properly:');
+        console.error('Database connection failed:', err.message);
+        console.log('Please ensure MySQL is running and configured properly:');
         console.log('   - Host:', process.env.DB_HOST || 'localhost');
         console.log('   - Database:', process.env.DB_NAME || 'lib');
         console.log('   - User:', process.env.DB_USER || 'root');
-        console.log('🎭 Starting in DEMO MODE with sample data...');
-        console.log('💡 To use real database, please configure MySQL and restart the server.');
+        console.log('Starting in DEMO MODE with sample data...');
+        console.log('To use real database, please configure MySQL and restart the server.');
         
         // Use demo routes when database is not available
         const demoRoutes = require('./server/routes/demo');
@@ -71,7 +71,7 @@ pool.getConnection((err, connection) => {
         return;
     }
     
-    console.log('✅ Database connected successfully as ID ' + connection.threadId);
+    console.log('Database connected successfully as ID ' + connection.threadId);
     connection.release();
     databaseConnected = true;
     
