@@ -2,7 +2,7 @@
 
 This guide will help you deploy the AWS First Cloud Journey Participant Management System to AWS using CloudFormation.
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 The deployment creates:
 
@@ -13,7 +13,7 @@ The deployment creates:
 - **Secrets Manager** for secure database credentials
 - **NAT Gateway** for outbound internet access from private subnets
 
-## 📋 Prerequisites
+## Prerequisites
 
 1. **AWS CLI** installed and configured
    ```bash
@@ -30,7 +30,7 @@ The deployment creates:
    - RDS, Secrets Manager
    - IAM (for creating roles)
 
-## 🚀 Quick Deployment
+## Quick Deployment
 
 ### Option 1: Using the Deployment Script (Linux/macOS)
 
@@ -72,7 +72,7 @@ aws cloudformation wait stack-create-complete --stack-name fcj-management-system
 5. Check **I acknowledge that AWS CloudFormation might create IAM resources**
 6. Click **Create Stack**
 
-## ⚙️ Configuration Parameters
+## Configuration Parameters
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -87,7 +87,7 @@ aws cloudformation wait stack-create-complete --stack-name fcj-management-system
 | `DBName` | `lib` | Database name |
 | `DBUsername` | `root` | Database master username |
 
-## 📊 What Gets Deployed
+## What Gets Deployed
 
 ### Network Infrastructure
 - **VPC**: `10.20.0.0/16`
@@ -115,7 +115,7 @@ aws cloudformation wait stack-create-complete --stack-name fcj-management-system
 - **Secrets Manager**: Secure credential storage
 - **Private Subnets**: App and DB tiers not directly accessible
 
-## 🔍 Monitoring & Scaling
+## Monitoring & Scaling
 
 ### Auto Scaling
 - **Target Tracking**: Scales based on 50% CPU utilization
@@ -126,7 +126,7 @@ aws cloudformation wait stack-create-complete --stack-name fcj-management-system
 - **High CPU Alarm**: Triggers when CPU > 70% for 5 minutes
 - **ASG Metrics**: Collected every minute
 
-## 📱 Application Features
+## Application Features
 
 Once deployed, the application provides:
 
@@ -137,7 +137,7 @@ Once deployed, the application provides:
 - **Health Monitoring**: Built-in health check endpoints
 - **Auto-scaling**: Handles traffic spikes automatically
 
-## 🌐 Accessing the Application
+## Accessing the Application
 
 After deployment completes:
 
@@ -153,7 +153,7 @@ After deployment completes:
 
 3. **Wait for initialization**: The application may take 2-3 minutes to fully start
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -188,7 +188,7 @@ aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names <ASG-Nam
 sudo journalctl -u fcj-management -f
 ```
 
-## 💰 Cost Estimation
+## Cost Estimation
 
 Approximate monthly costs (us-east-1):
 
@@ -201,7 +201,7 @@ Approximate monthly costs (us-east-1):
 
 *Costs may vary by region and usage patterns*
 
-## 🧹 Cleanup
+## Cleanup
 
 To delete all resources:
 
@@ -210,20 +210,20 @@ aws cloudformation delete-stack --stack-name fcj-management-system
 aws cloudformation wait stack-delete-complete --stack-name fcj-management-system
 ```
 
-**⚠️ Warning**: This will permanently delete all data including the database!
+**Warning**: This will permanently delete all data including the database!
 
-## 🔒 Security Best Practices
+## Security Best Practices
 
 The template implements several security best practices:
 
-- ✅ **Private subnets** for application and database tiers
-- ✅ **Security groups** with minimal required access
-- ✅ **Secrets Manager** for database credentials
-- ✅ **IAM roles** with least privilege
-- ✅ **Encrypted RDS storage**
-- ✅ **VPC isolation** from internet
+- **Private subnets** for application and database tiers
+- **Security groups** with minimal required access
+- **Secrets Manager** for database credentials
+- **IAM roles** with least privilege
+- **Encrypted RDS storage**
+- **VPC isolation** from internet
 
-## 📞 Support
+## Support
 
 If you encounter issues:
 
@@ -234,4 +234,4 @@ If you encounter issues:
 
 ---
 
-**Happy Deploying! 🚀**
+**Happy Deploying! **

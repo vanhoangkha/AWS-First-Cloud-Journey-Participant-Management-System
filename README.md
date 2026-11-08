@@ -16,7 +16,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
@@ -31,47 +31,47 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-## 🌟 Overview
+## Overview
 
 The AWS First Cloud Journey Participant Management System is a comprehensive web application designed to streamline the management of participants in AWS cloud learning programs. Built with modern web technologies, it provides an intuitive interface for administrators to manage participant data, track progress, and maintain program records.
 
 ### Key Highlights
 
-- 🎨 **Modern UI/UX** - Clean, responsive design with AWS-inspired styling
-- 🚀 **High Performance** - Optimized for speed and scalability
-- 📱 **Mobile-First** - Fully responsive across all devices
-- 🔒 **Secure** - Built with security best practices
-- 🎯 **User-Friendly** - Intuitive interface for easy navigation
-- 🔄 **Real-time** - Live updates and instant feedback
+- **Modern UI/UX** - Clean, responsive design with AWS-inspired styling
+- **High Performance** - Optimized for speed and scalability
+- **Mobile-First** - Fully responsive across all devices
+- **Secure** - Built with security best practices
+- **User-Friendly** - Intuitive interface for easy navigation
+- **Real-time** - Live updates and instant feedback
 
-## ✨ Features
+## Features
 
-### 👥 Participant Management
+### Participant Management
 - **Add Participants** - Easy-to-use forms with validation
 - **Edit Information** - Update participant details seamlessly
 - **View Profiles** - Comprehensive participant information display
 - **Delete Records** - Safe deletion with confirmation dialogs
 
-### 📊 Dashboard & Analytics
+### Dashboard & Analytics
 - **Statistics Overview** - Real-time participant counts and metrics
 - **Status Tracking** - Monitor active/inactive participants
 - **Search & Filter** - Quick participant lookup functionality
 - **Export Data** - Download participant information in various formats
 
-### 🎨 User Interface
+### User Interface
 - **Modern Design** - AWS-inspired color scheme and layout
 - **Responsive Layout** - Works perfectly on desktop, tablet, and mobile
 - **Interactive Elements** - Smooth animations and hover effects
 - **Accessibility** - WCAG compliant for inclusive design
 
-### 🔧 Technical Features
+### Technical Features
 - **Demo Mode** - Built-in demo with sample data for testing
 - **Form Validation** - Client-side and server-side validation
 - **Error Handling** - Comprehensive error management
 - **Loading States** - Visual feedback during operations
 - **Auto-save** - Prevent data loss with automatic saving
 
-## 🎬 Demo
+## Demo
 
 ### Screenshots
 
@@ -92,9 +92,9 @@ The AWS First Cloud Journey Participant Management System is a comprehensive web
 *Detailed participant information with action buttons*
 
 ### Live Demo
-🌐 **[Try the Live Demo](http://localhost:3333)** (when running locally)
+**[Try the Live Demo](http://localhost:3333)** (when running locally)
 
-## 🛠 Technology Stack
+## Technology Stack
 
 ### Backend
 - **Node.js** - JavaScript runtime environment
@@ -113,7 +113,7 @@ The AWS First Cloud Journey Participant Management System is a comprehensive web
 - **dotenv** - Environment variable management
 - **Git** - Version control system
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -201,7 +201,7 @@ DB_PASS=your_password
 NODE_ENV=development
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -225,7 +225,7 @@ The application automatically switches to demo mode if it cannot connect to the 
 - All UI features and interactions
 - Data persistence during the session
 
-## 📖 Usage
+## Usage
 
 ### Starting the Application
 
@@ -277,7 +277,7 @@ npm run prod
 - Copy participant information to clipboard
 - Generate reports for program management
 
-## 🔌 API Endpoints
+## API Endpoints
 
 ### Participant Management
 
@@ -306,7 +306,7 @@ curl -X POST http://localhost:3333/adduser \
 curl -X GET http://localhost:3333/
 ```
 
-## 🗄️ Database Schema
+## Database Schema
 
 ### User Table Structure
 
@@ -336,36 +336,36 @@ INSERT INTO `user`
 ('Khabib', 'Nurmagomedov', 'knurmagomedov@example.com', '012345 678912', 'Cloud architecture focus', 'active');
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 aws-fcj-management/
-├── 📁 public/                 # Static assets
-│   ├── 📁 css/               # Stylesheets
+├── public/ # Static assets
+│ ├── css/ # Stylesheets
 │   │   ├── main.css          # Legacy styles
 │   │   ├── modern-ui.css     # Modern UI styles
 │   │   └── cloudscape-custom.css # AWS Cloudscape styles
-│   └── 📁 js/                # Client-side JavaScript
-├── 📁 server/                # Server-side code
-│   ├── 📁 controllers/       # Route controllers
+│ └── js/ # Client-side JavaScript
+├── server/ # Server-side code
+│ ├── controllers/ # Route controllers
 │   │   ├── userController.js # Database operations
 │   │   └── demoController.js # Demo mode operations
-│   └── 📁 routes/            # Route definitions
+│ └── routes/ # Route definitions
 │       ├── user.js           # Database routes
 │       └── demo.js           # Demo routes
-├── 📁 views/                 # Handlebars templates
-│   ├── 📁 layouts/           # Layout templates
+├── views/ # Handlebars templates
+│ ├── layouts/ # Layout templates
 │   │   └── main.hbs          # Main layout
-│   ├── 📁 partials/          # Reusable components
+│ ├── partials/ # Reusable components
 │   ├── home.hbs              # Dashboard page
 │   ├── add-user.hbs          # Add participant form
 │   ├── edit-user.hbs         # Edit participant form
 │   └── view-user.hbs         # Participant details
-├── 📄 app.js                 # Main application file
-├── 📄 package.json           # Dependencies and scripts
-├── 📄 .env                   # Environment variables
-├── 📄 .gitignore             # Git ignore rules
-└── 📄 README.md              # Project documentation
+├── app.js # Main application file
+├── package.json # Dependencies and scripts
+├── .env # Environment variables
+├── .gitignore # Git ignore rules
+└── README.md # Project documentation
 ```
 
 ### Key Files Description
@@ -377,7 +377,7 @@ aws-fcj-management/
 - **`public/css/modern-ui.css`** - Main stylesheet with AWS-inspired design
 - **`.env`** - Environment configuration (not in repository)
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions from the community! Here's how you can help:
 
@@ -427,20 +427,20 @@ If you find a bug or have a suggestion:
    - Screenshots if applicable
    - Environment details
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ### MIT License Summary
 
-- ✅ Commercial use
-- ✅ Modification
-- ✅ Distribution
-- ✅ Private use
-- ❌ Liability
-- ❌ Warranty
+- Commercial use
+- Modification
+- Distribution
+- Private use
+- Liability
+- Warranty
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **AWS** - For inspiration and design guidelines
 - **Bootstrap Team** - For the excellent CSS framework
@@ -448,21 +448,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Express.js Team** - For the minimalist web framework
 - **Contributors** - For making this project better
 
-## 📞 Support
+## Support
 
 If you need help or have questions:
 
-- 📧 **Email**: support@aws-fcj-management.com
-- 💬 **Issues**: [GitHub Issues](https://github.com/vanhoangkha/AWS-First-Cloud-Journey-Participant-Management-System/issues)
-- 📖 **Documentation**: [Wiki](https://github.com/vanhoangkha/AWS-First-Cloud-Journey-Participant-Management-System/wiki)
-- 🌐 **Website**: [Project Homepage](https://vanhoangkha.github.io/AWS-First-Cloud-Journey-Participant-Management-System)
+- **Email**: support@aws-fcj-management.com
+- **Issues**: [GitHub Issues](https://github.com/vanhoangkha/AWS-First-Cloud-Journey-Participant-Management-System/issues)
+- **Documentation**: [Wiki](https://github.com/vanhoangkha/AWS-First-Cloud-Journey-Participant-Management-System/wiki)
+- **Website**: [Project Homepage](https://vanhoangkha.github.io/AWS-First-Cloud-Journey-Participant-Management-System)
 
 ---
 
 <div align="center">
 
-**Made with ❤️ for the AWS Community**
+**Made with for the AWS Community**
 
-[⬆ Back to Top](#aws-first-cloud-journey---participant-management-system)
+[Back to Top](#aws-first-cloud-journey---participant-management-system)
 
 </div>
