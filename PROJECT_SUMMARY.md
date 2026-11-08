@@ -1,52 +1,52 @@
-# 🎯 AWS First Cloud Journey - Participant Management System
+# AWS First Cloud Journey - Participant Management System
 
-## 📋 Project Overview
+## Project Overview
 
 This is a complete, production-ready web application for managing participants in the AWS First Cloud Journey program. The system features a modern, responsive UI and is designed to be deployed on AWS infrastructure with high availability and scalability.
 
-## 🏆 Key Achievements
+## Key Achievements
 
-### ✅ **Modern Web Application**
+### **Modern Web Application**
 - **Node.js + Express** backend with Handlebars templating
 - **Bootstrap 5** with custom AWS-inspired styling
 - **Responsive design** that works on all devices
 - **Real-time form validation** and user feedback
 - **Professional UI/UX** with smooth animations
 
-### ✅ **Complete CRUD Operations**
+### **Complete CRUD Operations**
 - **Create** new participants with validation
 - **Read** participant list with search functionality
 - **Update** participant information seamlessly
 - **Delete** participants with confirmation dialogs
 
-### ✅ **Database Integration**
+### **Database Integration**
 - **MySQL** database with proper schema
 - **Demo mode** with sample data when DB unavailable
 - **Automatic table creation** and data seeding
 - **Connection pooling** for performance
 
-### ✅ **AWS Cloud Deployment**
+### **AWS Cloud Deployment**
 - **CloudFormation template** for infrastructure as code
 - **Auto Scaling Group** with Application Load Balancer
 - **RDS Multi-AZ** deployment for high availability
 - **Secrets Manager** for secure credential management
 - **VPC** with public/private subnets across 2 AZs
 
-### ✅ **Production Features**
+### **Production Features**
 - **Health checks** and monitoring
 - **Auto-scaling** based on CPU utilization
 - **Nginx reverse proxy** for performance
 - **Systemd service** for application management
 - **CloudWatch alarms** for operational monitoring
 
-### ✅ **Developer Experience**
+### **Developer Experience**
 - **Comprehensive documentation** with deployment guides
 - **Automated deployment scripts** for easy setup
 - **Professional README** with badges and screenshots
 - **Clean code structure** with separation of concerns
 - **Git best practices** with meaningful commits
 
-## 🛠 Technology Stack
+## Technology Stack
 
 ### **Backend**
 - **Node.js 18.x** - JavaScript runtime
@@ -78,7 +78,7 @@ This is a complete, production-ready web application for managing participants i
 - **Nginx** - Reverse proxy
 - **Systemd** - Service management
 
-## 📊 Architecture Diagram
+## Architecture Diagram
 
 ```
 Internet
@@ -100,7 +100,7 @@ RDS MySQL Multi-AZ (Private DB Subnets)
 Secrets Manager (Database Credentials)
 ```
 
-## 🎨 UI Features
+## UI Features
 
 ### **Dashboard**
 - **Statistics cards** showing participant counts
@@ -120,7 +120,7 @@ Secrets Manager (Database Credentials)
 - **Desktop enhancements** with hover effects
 - **Print-friendly** styles
 
-## 🔒 Security Features
+## Security Features
 
 ### **Network Security**
 - **Private subnets** for application and database
@@ -140,7 +140,7 @@ Secrets Manager (Database Credentials)
 - **CSRF protection** considerations
 - **SQL injection prevention** with parameterized queries
 
-## 📈 Performance & Scalability
+## Performance & Scalability
 
 ### **Auto Scaling**
 - **CPU-based scaling** (target: 50% utilization)
@@ -160,7 +160,7 @@ Secrets Manager (Database Credentials)
 - **Browser caching** headers
 - **CDN ready** (CloudFront can be added)
 
-## 💰 Cost Optimization
+## Cost Optimization
 
 ### **Resource Efficiency**
 - **t3.micro instances** for cost-effective compute
@@ -176,7 +176,7 @@ Secrets Manager (Database Credentials)
 - **Data transfer**: Variable
 - **Total**: ~$92/month
 
-## 🚀 Deployment Options
+## Deployment Options
 
 ### **1. Quick Deploy (Recommended)**
 ```bash
@@ -196,7 +196,7 @@ aws cloudformation create-stack \
 - Upload `aws-template.yaml` to CloudFormation
 - Fill in parameters and deploy
 
-## 📚 Documentation
+## Documentation
 
 ### **Available Documentation**
 - **README.md** - Project overview and features
@@ -212,7 +212,7 @@ aws cloudformation create-stack \
 4. **Run locally**: `npm start`
 5. **Deploy to AWS**: Use deployment guide
 
-## 🎯 Use Cases
+## Use Cases
 
 ### **Educational Institutions**
 - **Track student progress** in AWS programs
@@ -229,7 +229,7 @@ aws cloudformation create-stack \
 - **Certification tracking**
 - **Program analytics** and insights
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 ### **Planned Features**
 - **User authentication** and role-based access
@@ -244,55 +244,55 @@ aws cloudformation create-stack \
 - **Lambda functions** for serverless features
 - **API Gateway** for RESTful APIs
 
-## 🏅 Best Practices Implemented
+## Best Practices Implemented
 
 ### **Code Quality**
-- ✅ **Separation of concerns** with MVC pattern
-- ✅ **Error handling** throughout the application
-- ✅ **Input validation** and sanitization
-- ✅ **Consistent coding style** and formatting
+- **Separation of concerns** with MVC pattern
+- **Error handling** throughout the application
+- **Input validation** and sanitization
+- **Consistent coding style** and formatting
 
 ### **Infrastructure**
-- ✅ **Infrastructure as Code** with CloudFormation
-- ✅ **High availability** across multiple AZs
-- ✅ **Security by design** with private subnets
-- ✅ **Monitoring and alerting** with CloudWatch
+- **Infrastructure as Code** with CloudFormation
+- **High availability** across multiple AZs
+- **Security by design** with private subnets
+- **Monitoring and alerting** with CloudWatch
 
 ### **DevOps**
-- ✅ **Version control** with meaningful commits
-- ✅ **Automated deployment** scripts
-- ✅ **Documentation** for all components
-- ✅ **Environment configuration** management
+- **Version control** with meaningful commits
+- **Automated deployment** scripts
+- **Documentation** for all components
+- **Environment configuration** management
 
-## 🎉 Success Metrics
+## Success Metrics
 
 ### **Technical Achievements**
-- ✅ **100% responsive** design across all devices
-- ✅ **Sub-second** page load times
-- ✅ **99.9% uptime** with Multi-AZ deployment
-- ✅ **Auto-scaling** from 2 to 6 instances
-- ✅ **Zero-downtime** deployments capability
+- **100% responsive** design across all devices
+- **Sub-second** page load times
+- **99.9% uptime** with Multi-AZ deployment
+- **Auto-scaling** from 2 to 6 instances
+- **Zero-downtime** deployments capability
 
 ### **User Experience**
-- ✅ **Intuitive interface** with modern design
-- ✅ **Real-time feedback** on all interactions
-- ✅ **Accessibility compliant** (WCAG guidelines)
-- ✅ **Mobile-optimized** for on-the-go access
+- **Intuitive interface** with modern design
+- **Real-time feedback** on all interactions
+- **Accessibility compliant** (WCAG guidelines)
+- **Mobile-optimized** for on-the-go access
 
 ### **Operational Excellence**
-- ✅ **Automated monitoring** and alerting
-- ✅ **Secure credential management**
-- ✅ **Backup and recovery** procedures
-- ✅ **Cost-optimized** resource usage
+- **Automated monitoring** and alerting
+- **Secure credential management**
+- **Backup and recovery** procedures
+- **Cost-optimized** resource usage
 
 ---
 
-## 🚀 **Ready for Production!**
+## **Ready for Production!**
 
 This AWS First Cloud Journey Participant Management System is a complete, production-ready solution that demonstrates modern web development practices, AWS cloud architecture, and operational excellence. It's designed to scale with your needs while maintaining security, performance, and cost-effectiveness.
 
-**🌟 Start managing your AWS training participants today!**
+**Start managing your AWS training participants today!**
 
 ---
 
-*Built with ❤️ for the AWS Community*
+*Built with for the AWS Community*
